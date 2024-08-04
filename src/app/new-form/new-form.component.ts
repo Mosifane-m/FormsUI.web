@@ -17,9 +17,14 @@ declare function addQuestion(): void;
   styleUrl: './new-form.component.css'
 })
 export class NewFormComponent {
-  questionCount: number = 0
+  questions = {
+    "title": '',
+    "description": ''
+  }
   
   addNewQuestion(){
     addQuestion()
   }
 }
+
+//make a list of objects containing the titles then post request each time. 

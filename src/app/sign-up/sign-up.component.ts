@@ -3,8 +3,6 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterOutlet } from '@angular/router';
-import { newLogin } from '../../Models/signUp.model';
-import { catchError, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,13 +12,6 @@ import { catchError, Observable } from 'rxjs';
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent {
-  name: string | undefined
-  surname: string | undefined
-  email: string | undefined
-  password: string | undefined
-  gender: string | undefined
-  handleError: any;
-
   postLogin = {
     'email':'',
     'password': ''
@@ -31,8 +22,6 @@ export class SignUpComponent {
     'lastName': '',
     'gender': ''
   }
-
-
 
   constructor(private router: Router){}
   http = inject(HttpClient);
@@ -52,7 +41,7 @@ export class SignUpComponent {
         alert('Post created successfully')
       })
 
-      this.navigateTo('Login')
+      this.navigateTo('')
     }, error => {
       console.error('Error creating post: ', error)
     }
