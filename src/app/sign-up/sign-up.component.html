@@ -77,18 +77,18 @@
 			<h1>Register</h1>
 			<div class = input-box> 
                 <label for="firstName">First Name:</label>
-				<input type="text" placeholder="First Name" required name="name" [(ngModel)]="name">	
+				<input type="text" placeholder="First Name" required name="name" [(ngModel)]="postUserInfo.fullName">	
 			</div>
 <br>
 
             <div class = input-box> 
                 <label for="surname">Last Name:</label>
-                <input type="text" placeholder="Last Name" required name="surname" [(ngModel)]="surname">	
+                <input type="text" placeholder="Last Name" required name="surname" [(ngModel)]="postUserInfo.lastName">	
             </div>
 <br>
             <div class = input-box> 
                 <label for="gender">Gender:</label>
-                <select id="Gender" name="Gender" required>
+                <select id="Gender" name="Gender" required [(ngModel)]="postUserInfo.gender">
                     <option value="">Select Gender</option>
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
@@ -98,12 +98,12 @@
 <br>
             <div class = input-box> 
                 <label for="email">Email:</label>
-                <input type="email" placeholder="Email" required  name="email" [(ngModel)]="email">
+                <input type="email" placeholder="Email" required  name="email" [(ngModel)]="postLogin.email">
             </div>
 <br>
 			<div class = input-box> 
                 <label for="password">Password:</label>
-			    <input type="password" placeholder="Password" required name="password" [(ngModel)]="password">
+			    <input type="password" placeholder="Password" required name="password" [(ngModel)]="postLogin.password">
 			</div>
 <br>
 			<div class="remember">
@@ -111,7 +111,7 @@
 
 			</div>
 
-			<button type="submit" class="btn" (click)="postUser()">Register</button>
+			<button type="submit" class="btn" (click)="newUserLogin()">Register</button>
 
 		</form>
 	</div>   
