@@ -1,0 +1,121 @@
+<!-- <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  
+  <div class="container">
+    <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+      <div class="row">
+        <div class="col-6">
+          <label for="floatingInput">First Name</label>
+          <input type="text" class="form-control" id="floatingInput" placeholder="John" name="name" [(ngModel)]="name">
+        </div>
+        <div class="col-6">
+          <label for="floatingInput">Last Name</label>
+          <input type="text" class="form-control" id="floatingInput" placeholder="Doe" name="surname" [(ngModel)]="surname">
+        </div>
+      </div>
+  
+      <br />
+      <br />
+  
+      <div class="row">
+        <div class="col-6">
+          <label for="floatingInput">Phone</label>
+          <input type="text" class="form-control" id="floatingInput" placeholder="011 222 3333" name="phone" [(ngModel)]="phone">
+        </div>
+        <div class="col-6">
+          <label for="floatingInput">Email address</label>
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" [(ngModel)]="email">
+        </div>
+      </div>
+  
+      <br />
+      <br />
+  
+      <div class="row">
+        <div class="col-6">
+          <label for="floatingInput">ID</label>
+          <input type="email" class="form-control" id="floatingInput" placeholder="0000000000000" name="id" [(ngModel)]="id">
+        </div>
+        <div class="col-6">
+          <label for="floatingInput">Age</label>
+          <input type="email" class="form-control" id="floatingInput" placeholder="99" name="age" [(ngModel)]="age">
+        </div>
+      </div>
+  
+      <br />
+      <br />
+  
+      <div class="row">
+        <label for="floatingPassword">Password</label>
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" [(ngModel)]="password">
+      </div>
+  
+      <br />
+  
+      <div class="row">
+        <label for="floatingPassword">Confirm Password</label>
+        <input type="password" class="form-control" id="floatingPassword" placeholder="confirm Password" name="passwordConfirm">
+  
+      </div>
+  
+      <br />
+      <br />
+  
+  
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Welcome</button>
+  
+    </form>
+  </div>
+  
+  
+   -->
+
+   <body>
+    <div class="box">
+		<form action="">
+			<h1>Register</h1>
+			<div class = input-box> 
+                <label for="firstName">First Name:</label>
+				<input type="text" placeholder="First Name" required name="name" [(ngModel)]="name">	
+			</div>
+<br>
+
+            <div class = input-box> 
+                <label for="surname">Last Name:</label>
+                <input type="text" placeholder="Last Name" required name="surname" [(ngModel)]="surname">	
+            </div>
+<br>
+            <div class = input-box> 
+                <label for="gender">Gender:</label>
+                <select id="Gender" name="Gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+            </div>
+<br>
+            <div class = input-box> 
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Email" required  name="email" [(ngModel)]="email">
+            </div>
+<br>
+			<div class = input-box> 
+                <label for="password">Password:</label>
+			    <input type="password" placeholder="Password" required name="password" [(ngModel)]="password">
+			</div>
+<br>
+			<div class="remember">
+				<label><input type="checkbox">Remember me</label>
+
+			</div>
+
+			<button type="submit" class="btn" (click)="postUser()">Register</button>
+
+		</form>
+	</div>   
+
+    <script src="script.js"></script>
+    
+</body>

@@ -1,0 +1,23 @@
+<body>
+    <div class="form">
+        <div class="title-div">
+            <input type="text" id="form-title" class="form-title" placeholder="Enter form title" value="">
+            <textarea id="form-description" class="form-description" placeholder="Enter form description"></textarea>
+        </div>
+
+        <div id="question-container"></div>
+
+        <button class="btn" type="submit" (click)="addNewQuestion()" >Add Question</button>
+        <button class="btn publish-btn" onclick="publishForm()">Publish</button>
+
+        <div class="last-div">
+            <p class="never">Never submit passwords through forms.</p>
+            <h2>Forms</h2>
+        </div>
+    </div>
+
+
+
+    <script src="src/assets/script.js"></script>
+</body>
+

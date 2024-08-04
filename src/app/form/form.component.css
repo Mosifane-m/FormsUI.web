@@ -1,0 +1,173 @@
+body {
+    background-color: #ede7f6;
+    font-family: Roboto, Sans-serif;
+}
+.form {
+    width: 600px;
+    margin: auto;
+}
+.title-div {
+    background-color: #FDFEFE;
+    margin: 15px;
+    border-radius: 8px;
+    border-top: 8px solid #6703c4;
+    padding: 25px;
+}
+.question-div {
+    background-color: #FDFEFE;
+    margin: 15px;
+    border-radius: 8px;
+    padding: 15px;
+}
+.question-div .name {
+    font-size: 15px;
+    margin-bottom: 10px;
+    display: block;
+}
+.question-div .name input {
+    font-size: 18px; /* Increase font size for the question input */
+    width: 100%;
+    border: 0; /* Remove border */
+    outline: 0;
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width */
+}
+.input-div {
+    margin-top: 10px;
+}
+.input-div input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1.5px solid #DCD7D7;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.input-div.text input {
+    border: 0; /* Remove border for text input */
+}
+.input-div.select input {
+    border-bottom: 1.5px solid #DCD7D7; /* Border for multiple choice */
+}
+.btn {
+    height: 50px;
+    width: 150px;
+    background-color: #6703c4;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: .5px;
+    font-weight: 540;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+.add-option-btn {
+    height: 36px;
+    width: 150px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    font-size: 14px;
+    letter-spacing: .5px;
+    font-weight: 540;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+.last-div h2 {
+    text-align: center;
+    padding-top: 50px;
+    color: #a2a4a6;
+    font-weight: 200;
+}
+.never {
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 70px;
+    text-align: center;
+}
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.question-type {
+    font-size: 15px;
+    width: 100%;
+    border: 0; /* Remove border */
+    outline: 0;
+    padding: 10px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    margin-bottom: 10px;
+    background-color: #FDFEFE; /* Match background with form */
+}
+.publish-btn {
+    background-color: #007BFF; /* Blue color for publish button */
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: .5px;
+    font-weight: 540;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+.form-title {
+    font-size: 24px;
+    width: 100%;
+    border: 1px solid #DCD7D7;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.form-description {
+    width: 100%;
+    border: 1px solid #DCD7D7;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width */
+    height: 100px;
+    resize: vertical; /* Allow vertical resizing */
+    margin-bottom: 10px;
+}
+.form-title {
+    font-size: 24px;
+    width: 100%;
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: maintain border-radius */
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Include padding in width */
+    background-color: #FDFEFE; /* Optional: match background color */
+}
+
+.form-description {
+    width: 100%;
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: maintain border-radius */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width */
+    height: 100px;
+    resize: vertical; /* Allow vertical resizing */
+    margin-bottom: 10px;
+    background-color: #FDFEFE; /* Optional: match background color */
+}
+
+.rsvp-form select {
+    border: none; /* Remove border */
+    border-bottom: 1.5px solid #DCD7D7; /* Optional: Add bottom border */
+}

@@ -1,0 +1,23 @@
+<body>
+    <div class="form">
+        <div class="title-div">
+            <h1> {{homeInfo.getTitle()}} </h1>
+            <p>
+                {{ homeInfo.getDescription() }}
+            </p>
+        </div>
+
+        <div class="question-div" *ngFor="let item of homeInfo.getQuestions()" style="border: qpx solid red;">
+            <h4>
+                {{item.questionText}}
+            </h4>
+
+            <input type="text" name="" id="" placeholder="ansswer here" style="border: 1px solid black;">
+        </div>
+    </div>
+
+
+
+    <script src="src/assets/script.js"></script>
+</body>
+

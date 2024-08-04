@@ -1,0 +1,31 @@
+<body>
+   <div class="box">
+		<form action="">
+			<h1>Login Portal</h1>
+			<div class = input-box> 
+				<input type="text" placeholder="Username" required name="email" [(ngModel)]="email">	
+				<span class="icon-login"><img src="./Images/user-solid-24.png" alt="user icon" width="20" height="20"></span>
+				</div>
+<br>
+				<div class = input-box> 
+				<input type="password" placeholder="Password" required name="password" [(ngModel)]="password">
+				<span class="icon-login"><img src="./Images/lock-solid-24.png" alt="password icon" width="20" height="20"></span>
+			</div>
+<br>
+			<div class="remember">
+				<label><input type="checkbox">Remember me</label>
+
+				<a id="forgotPasswordLink" (click)="navigateTo('ForgotPassword')" > Forgot Password? </a>
+			</div>
+
+      <button type="submit" class="btn" (click)="verifyUser('Home')">
+        Login
+      </button>
+
+
+			<div class="register">
+				<p> No account? <a (click)="navigateTo('SignUp')">"> Register</a> </p>
+			</div>
+		</form>
+	</div>
+</body> 
