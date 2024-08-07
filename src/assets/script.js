@@ -1,3 +1,5 @@
+const { input } = require("@angular/core");
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get the register link element by its ID
     var registerLink = document.getElementById('toRegisterPage');
@@ -43,37 +45,96 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let questionCount = 0;
 
+function addHeading(userID){
+    const data = {
+        'userID': userID,
+        'title': document.getElementById('form-title').innerText,
+        'description': document.getElementById('form-description').innerText,
+        'published': 'not published'
+    };
+
+    return data
+
+}
+
+function getAllUserQuestions(questionaireID){
+    var questions = []
+
+    for (let index = 1; index <= questionCount; index++) {
+        var userQuestions = {
+            'questionnaireID': questionaireID,
+            'questionText': document.getElementById(`question-${index}`).innerText,
+            'questionType': 'TextBox',
+            'isRequired': 'Required'
+        }
+       
+        questions.push(userQuestions)
+    }
+
+    return questions
+
+}
+
 function addQuestion() {
     questionCount++;
     const questionContainer = document.getElementById('question-container');
     
     const questionDiv = document.createElement('div');
-    questionDiv.className = 'question-div';
-    questionDiv.id = `question-${questionCount}`;
+    questionDiv.style.backgroundColor = '#FDFEFE';
+    questionDiv.style.margin = '15px';
+    questionDiv.style.borderRadius = '8px';
+    questionDiv.style.padding = '15px';
+    // questionDiv.className = 'question-div';
+    //questionDiv.id = `question-${questionCount}`;
     
     const questionLabel = document.createElement('div');
-    questionLabel.className = 'name';
-    questionLabel.innerHTML = `
-        <input type="text" placeholder="Enter your question here" id="question-text-${questionCount}">
-        <input type="checkbox" class="required-checkbox" id="question-required-${questionCount}">
-        <label for="question-required-${questionCount}">Required</label>
-    `;
+    questionLabel.style.fontSize = '15px';
+    questionLabel.style.marginBottom = '10px';
+    questionLabel.style.display = 'block';
+
+    const questionInput = document.createElement('input')
+    questionInput.id = `question-${questionCount}`
+    questionInput.placeholder = 'Write your question here'
+    questionInput.style.fontSize = '18px'
+    questionInput.style.width = '100%'
+    questionInput.style.border = '0'
+    questionInput.style.padding = '10px'
+    questionInput.style.boxSizing = 'border-box'
+
+    questionDiv.appendChild(questionInput)
+
     
-    const questionType = document.createElement('select');
-    questionType.className = 'question-type';
-    questionType.id = `question-type-${questionCount}`;
-    questionType.onchange = function() {
-        updateQuestionType(questionDiv.id, this.value);
-    };
-    questionType.innerHTML = `
-        <option value="" disabled selected>Choose</option>
-        <option value="text">Text</option>
-        <option value="multiple">Multiple Choice</option>
-    `;
+    // questionLabel.className = 'name';
+    // questionLabel.innerHTML = `
+    //     <input type="text" placeholder="Enter your question here" id="question-text-${questionCount}">
+    //     <input type="checkbox" class="required-checkbox" id="question-required-${questionCount}">
+    //     <label for="question-required-${questionCount}">Required</label>
+    // `;
+    
+    // const questionType = document.createElement('select');
+    // questionType.className = 'question-type';
+    // questionType.id = `question-type-${questionCount}`;
+    // questionType.onchange = function() {
+    //     updateQuestionType(questionDiv.id, this.value);
+    // };
+    // questionType.innerHTML = `
+    //     <option value="" disabled selected>Choose</option>
+    //     <option value="text">Text</option>
+    //     <option value="multiple">Multiple Choice</option>
+    // `;
     
     const inputDiv = document.createElement('div');
     inputDiv.className = 'input-div';
     inputDiv.id = `input-div-${questionCount}`;
+
+    const userInput = document.createElement('input')
+    userInput.style.width ='100%'
+    userInput.style.border = '0'
+    userInput.style.outline = '0'
+    userInput.style.borderBottom = '1.5px solid #DCD7D7'
+    userInput.style.fontSize = '15px'
+    userInput.style.marginBottom = '10px'
+
     
     const addOptionBtn = document.createElement('button');
     addOptionBtn.className = 'add-option-btn';
@@ -84,19 +145,31 @@ function addQuestion() {
     };
     
     const deleteBtn = document.createElement('button');
-    deleteBtn.className = 'delete-btn';
+    deleteBtn.style.backgroundColor = 'red'
+    deleteBtn.style.color = 'white'
+    deleteBtn.style.border = 'none'
+    deleteBtn.style.borderRadius = '5px'
+    deleteBtn.style.padding = '8px 15px'
+    deleteBtn.style.cursor = 'pointer'
+    deleteBtn.style.marginTop = '10px'
+    deleteBtn.style.fontSize = '14px'
+    // deleteBtn.className = 'delete-btn';
     deleteBtn.innerHTML = 'Delete';
     deleteBtn.onclick = function() {
         deleteQuestion(questionDiv.id);
     };
     
     questionDiv.appendChild(questionLabel);
-    questionDiv.appendChild(questionType);
+    //questionDiv.appendChild(questionType);
     questionDiv.appendChild(inputDiv);
+    inputDiv.appendChild(userInput)
+
     questionDiv.appendChild(addOptionBtn);
     questionDiv.appendChild(deleteBtn);
     
     questionContainer.appendChild(questionDiv);
+
+
 }
 
 function updateQuestionType(questionId, type) {

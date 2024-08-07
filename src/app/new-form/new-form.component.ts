@@ -1,13 +1,15 @@
 import { style } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { QuestionHeaderFormComponent } from '../question-header-form/question-header-form.component';
 import { QuestionHeaderService } from '../../services/QuestionHeader/question-header.service';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AsyncPipe } from '@angular/common';
+import { HomeService } from '../../services/home/home.service';
 
 declare function addQuestion(): void;
+declare function addHeading(userID: number): void
 
 @Component({
   selector: 'app-new-form',
@@ -17,14 +19,24 @@ declare function addQuestion(): void;
   styleUrl: './new-form.component.css'
 })
 export class NewFormComponent {
-  questions = {
-    "title": '',
-    "description": ''
+
+  constructor(private home: HomeService){}
+  http = inject(HttpClient);
+
+  addHeading(userID: number){
+    addHeading(this.home.getUserID())
   }
+
   
   addNewQuestion(){
     addQuestion()
   }
+
+
+  saveChanges(){
+    //return this.http.post('',addHeading(this.home.getUserID()))
+  }
 }
+
 
 //make a list of objects containing the titles then post request each time. 
