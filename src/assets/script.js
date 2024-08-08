@@ -1,69 +1,67 @@
-const { input } = require("@angular/core");
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the register link element by its ID
-    var registerLink = document.getElementById('toRegisterPage');
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Get the register link element by its ID
+//     var registerLink = document.getElementById('toRegisterPage');
     
-    // Add click event listener
-    registerLink.addEventListener('click', function(event) {
-        // Prevent the default action of the link
-        event.preventDefault();
+//     // Add click event listener
+//     registerLink.addEventListener('click', function(event) {
+//         // Prevent the default action of the link
+//         event.preventDefault();
         
-        // Redirect to the register page
-        window.location.href = 'register.html'; // Replace with your actual register page URL
-    });
-});
+//         // Redirect to the register page
+//         window.location.href = 'register.html'; // Replace with your actual register page URL
+//     });
+// });
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the forgot password link element by its ID
-    var forgotPasswordLink = document.getElementById('forgotPasswordLink');
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Get the forgot password link element by its ID
+//     var forgotPasswordLink = document.getElementById('forgotPasswordLink');
     
-    // Add click event listener
-    forgotPasswordLink.addEventListener('click', function(event) {
-        // Prevent the default action of the link
-        event.preventDefault();
+//     // Add click event listener
+//     forgotPasswordLink.addEventListener('click', function(event) {
+//         // Prevent the default action of the link
+//         event.preventDefault();
         
-        // Redirect to the forgot password page
-        window.location.href = 'Password.html'; // Replace with your actual forgot password page URL
-    });
-});
+//         // Redirect to the forgot password page
+//         window.location.href = 'Password.html'; // Replace with your actual forgot password page URL
+//     });
+// });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var forgotPasswordForm = document.getElementById('fogotpassword');
-    var messageElement = document.getElementById('message');
+// document.addEventListener('DOMContentLoaded', function() {
+//     var forgotPasswordForm = document.getElementById('fogotpassword');
+//     var messageElement = document.getElementById('message');
 
-    forgotPasswordForm.addEventListener('submit', function(event) {
-        event.preventDefault();
+//     forgotPasswordForm.addEventListener('submit', function(event) {
+//         event.preventDefault();
 
-        // Simulate sending email (replace with actual logic)
-        setTimeout(function() {
-            // Show success message
-            messageElement.textContent = 'An email has been sent to your email address. Please check your inbox.';
-        }, 1000); // Simulating a delay for demonstration purposes, replace with actual email sending logic
-    });
-});
+//         // Simulate sending email (replace with actual logic)
+//         setTimeout(function() {
+//             // Show success message
+//             messageElement.textContent = 'An email has been sent to your email address. Please check your inbox.';
+//         }, 1000); // Simulating a delay for demonstration purposes, replace with actual email sending logic
+//     });
+// });
 
 let questionCount = 0;
 
-function addHeading(userID){
+function GetUserHeading(userID){
     const data = {
         'userID': userID,
-        'title': document.getElementById('form-title').innerText,
-        'description': document.getElementById('form-description').innerText,
+        'title': document.getElementById('form-title').value,
+        'description': document.getElementById('form-description').value,
         'published': 'not published'
     };
 
     return data
-
 }
 
 function getAllUserQuestions(questionaireID){
-    var questions = []
+    const questions = []
 
     for (let index = 1; index <= questionCount; index++) {
         var userQuestions = {
             'questionnaireID': questionaireID,
-            'questionText': document.getElementById(`question-${index}`).innerText,
+            'questionText': document.getElementById(`question-${index}`).value,
             'questionType': 'TextBox',
             'isRequired': 'Required'
         }
