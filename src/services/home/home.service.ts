@@ -16,6 +16,8 @@ export class HomeService {
   private title: string = '';
   private description: string = ''
 
+  private registrationDate: Date = new Date("")
+
   private titles: string[] = []
   private descriptions: string[] = []
 
@@ -23,6 +25,13 @@ export class HomeService {
   private questions: Questions[] = []
 
   constructor() { }
+
+  setRegistrationDate(date: Date){
+    this.registrationDate = date
+  }
+  getRegistrationDate(){
+    return this.registrationDate
+  }
 
   setQuestionaire(questionaire: Questionaires[]){
     this.userQuestionaires = questionaire

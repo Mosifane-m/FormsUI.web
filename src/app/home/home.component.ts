@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
       this._home.setUserID(this.userInfo[0].userID)
       this._home.setName(this.userInfo[0].fullName)
       this._home.setSurname(this.userInfo[0].lastName)
+      this._home.setRegistrationDate(this.userInfo[0].registrationDate)
 
       this.http.get<Questionaires[]>(`https://localhost:7098/api/Questionnaires/${this._home.getUserID()}`).subscribe((forms: Questionaires[]) => {
         this.questionaires = forms

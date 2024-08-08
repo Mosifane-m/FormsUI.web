@@ -33,8 +33,8 @@
     <main>
         <section class="user-info">
             <h2>Welcome, {{_home.getName()}} {{_home.getSurname()}} </h2>
-            <p>Email: {{loginService.getEmail()}} </p>
-            <p>Member since: [Date]</p>
+            <p> <b>Email: </b> {{loginService.getEmail()}} </p>
+            <p> <b>Member since: </b> {{_home.getRegistrationDate()}} </p>
         </section>
         <section class="new-form">
             <h2>Start a new form</h2>
